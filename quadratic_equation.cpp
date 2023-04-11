@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
- 
+ // В данном файле будет распологаться решение квадратных уравнений различными методами
+
+
+
 int crammers_rule()
 {
 float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y, x, y; //Поработать над типами данных переменных (с памятью)
@@ -90,7 +93,7 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
         return 0;
     }
 }
-// В данном файле будет распологаться решение квадратных уравнений различными методами
+
 int main()
 {
     setlocale(LC_ALL, "ru");
