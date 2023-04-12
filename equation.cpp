@@ -4,6 +4,13 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL,"ru");
+    cout<<"Введите уравнения:";
+    double x,a,result;
+    cin >> x;
+    cin >> a;
+    cout << x << "x = " << a << endl;  
+    result = a / x;
+    cout << "x = " <<result << endl; 
 }
 
 /*

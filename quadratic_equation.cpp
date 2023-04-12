@@ -2,10 +2,33 @@
 using namespace std;
  // В данном файле будет распологаться решение квадратных уравнений различными методами
 
+int crammers_rule();
+int discriminant();
+
 int main()
 {
     setlocale(LC_ALL, "ru");
-    crammers_rule();
+    cout<<"Введите метод решения квадратного уравнения"<<endl;
+    cout<<"1 - дискриминант"<<"\n"<<"2 - Метод Краммера"<<endl;
+    int between;
+    cin >> between;
+
+    if(between==1)
+    { 
+        discriminant();
+    }
+    
+    else
+    {
+        crammers_rule();
+    }
+}
+
+int discriminant()
+{
+    int a=23;
+    cout<<a; 
+    return 0;
 }
 
 int crammers_rule()
@@ -28,27 +51,35 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
         cin >> a21;
         cin >> a22;
         cin >> b2;
-        cout << " \n " << a11 << " x1 + " << a12 << " x2 = " << b1 << " \n ";
-        cout << " \n " << a21 << " x1 + " << a22 << " x2 = " << b2 << " \n ";
+        cout << "\n";
+
+        cout << a11 << " x1 + " << a12 << " x2 = " << b1 << endl;
+        cout << a21 << " x1 + " << a22 << " x2 = " << b2 << "\n"<< endl;
+       
         cout << "Матрица определителя:"<<endl;
         cout << a11 << " " << a12 << endl;
         cout << a21 << " " << a22 << endl;
         determinant = (a11 * a22) - (a12 * a21);
         cout << endl;
+        
         cout << "Определитель = " << determinant << endl;
-        cout << endl;
+    
+       
         cout << "Матрица для вычисления определителя x: " << endl;
         cout << b1 << " " << a12 << endl;
         cout << b2 << " " << a22 << endl;
         result_x = (b1 * a22) - (a12 * b2);
         cout << endl;
+        
         cout << "Определитель х = " << result_x << endl;
         cout << endl;
+       
         cout << "Матрица для вычисления определителя y: " << endl;
         cout << a11 << " " << b1 << endl;
         cout << a21 << " " << b2 << endl;
         result_y = (a11 * b2) - (b1 * a21);
         cout << endl;
+       
         cout << "Определитель y = " << result_y << endl;
         cout << endl;
         x = result_x / determinant;
@@ -68,23 +99,31 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
         cin >> b1;
         cin >> b2;
         cin >> b3;
+        cout<<"\n";
+
         cout << a11 << "x1 + " << a12 << "x2 = " << b1 << endl;
         cout << a21 << "x1 + " << a22 << "x2 = " << b2 << endl;
         cout << a11 << "x1 + " << a12 << "x2 = " << b3 << endl;
+        
         cout << "Матрица определителя "<<endl;
         cout << a11 << " " << a12 << endl;
         cout << a21 << " " << a22 << endl;
         determinant = (a11 * a22) - (a12 * a21);
+        
         cout << "Определитель = " << determinant << endl;
+        
         cout << "Матрица для вычисления определителя x: " << endl;
         cout << b1 << " " << a12 << endl;
         cout << b2 << " " << a22 << endl;
         result_x = (b1 * a22) - (a12 * b2);
+        
         cout << "Определитель х = " << result_x << endl;
+        
         cout << "Матрица для вычисления определителя y: " << endl;
         cout << a11 << " " << b1 << endl;
         cout << a21 << " " << b2 << endl;
         result_y = (a11 * b2) - (b1 * a21);
+        
         cout << "Определитель y = " << result_y << endl;
         x = result_x / determinant;
         cout << "x = " << x << endl;
@@ -99,7 +138,6 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
 }
 
 
-
 /*
 Задачи:
 1-Написать код для интерфейса матриц:
@@ -110,7 +148,6 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
 
 ну или что-то в таком стиле.
 2-Добавить решение через дискреминант.
-3-написать выбор разных методов.
-4-написать решения уравнений через теорему Виетта.
+3-написать выбор разных методов. (выполнено*)
 */
 
