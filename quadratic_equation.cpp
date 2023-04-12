@@ -2,7 +2,11 @@
 using namespace std;
  // В данном файле будет распологаться решение квадратных уравнений различными методами
 
-
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    crammers_rule();
+}
 
 int crammers_rule()
 {
@@ -94,11 +98,7 @@ float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y,
     }
 }
 
-int main()
-{
-    setlocale(LC_ALL, "ru");
-    crammers_rule();
-}
+
 
 /*
 Задачи:
