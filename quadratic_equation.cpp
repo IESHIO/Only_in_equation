@@ -23,6 +23,9 @@ int main()
     case 2:
         crammers_rule();
     break;
+    default:
+    cout<<"математическая операция не реализована"<<endl;
+    return 0;
     }
 
 int discriminant()
