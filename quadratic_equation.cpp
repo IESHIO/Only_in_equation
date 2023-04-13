@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
  // В данном файле будет распологаться решение квадратных уравнений различными методами
 
@@ -26,8 +27,21 @@ int main()
 
 int discriminant()
 {
-    int a=23;
-    cout<<a; 
+    int D, result, a, b, c, x1, x2;
+    cin >> a;
+    cin >> b; 
+    cin >> c;
+    D = pow(b,2)-4*a*c;
+    if(D<0)
+    {
+      cout << "Нет действительных корней";
+    }
+     
+    if(D==0)
+    {
+      
+    }
+
     return 0;
 }
 
