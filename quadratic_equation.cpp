@@ -14,16 +14,16 @@ int main()
     int between;
     cin >> between;
 
-    if(between==1)
-    { 
-        discriminant();
-    }
-    
-    else
+    switch(between)
     {
+    case 1:
+        discriminant();
+    break;
+
+    case 2:
         crammers_rule();
+    break;
     }
-}
 
 int discriminant()
 {
@@ -43,6 +43,7 @@ int discriminant()
     }
 
     return 0;
+    }
 }
 
 int crammers_rule()
