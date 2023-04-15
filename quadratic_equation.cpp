@@ -9,9 +9,9 @@ int discriminant();
 int main()
 {
     setlocale(LC_ALL, "ru");
-    cout << "Введите метод решения квадратного уравнения" << endl;
+    cout << "Введите метод для решения квадратного уравнения" << endl;
     cout << "1 - дискриминант"<< "\n" << "2 - Метод Краммера" << endl;
-    int between;
+    short int between;
     cin >> between;
 
     switch (between)
@@ -33,11 +33,10 @@ int main()
 int discriminant()
 {
     int D, result, a, b, c, x1, x2;
-    cin >> a;
-    cin >> b;
-    cin >> c;
+    cin >> a >> b >> c;
     cout << a << "x^2 " << b << "x " << c << "= 0";
     D = pow(b, 2) - 4 * a * c;
+
     if (D < 0)
     {
         cout << "Нет действительных корней";
@@ -47,6 +46,7 @@ int discriminant()
     {
         cout<<"d=0";
     }
+
 
     return 0;
 }
@@ -65,11 +65,9 @@ int crammers_rule()
     {
     case 2:
         cout << "Введите два уравнение:" << endl;
-        cin >> a11;
-        cin >> a12;
+        cin >> a11 >> a12;
         cin >> b1;
-        cin >> a21;
-        cin >> a22;
+        cin >> a21 >> a22;
         cin >> b2;
         cout << "\n";
 
