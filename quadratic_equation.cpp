@@ -36,6 +36,7 @@ int discriminant()
     cin >> a >> b >> c;
     cout << a << "x^2 " << b << "x " << c << "= 0";
     D = pow(b, 2) - 4 * a * c;
+    cout << "D=" << D << endl;
 
     if (D < 0)
     {
@@ -45,6 +46,12 @@ int discriminant()
     if (D == 0)
     {
         cout<<"d=0";
+    }
+
+    if(D > 0)
+    {
+ 
+
     }
 
 
