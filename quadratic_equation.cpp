@@ -5,12 +5,14 @@ using namespace std;
 
 int crammers_rule();
 int discriminant();
+int viet_rule();
 
 int main()
 {
     setlocale(LC_ALL, "ru");
     cout << "Введите метод для решения квадратного уравнения" << endl;
     cout << "1 - дискриминант"<< "\n" << "2 - Метод Краммера" << endl;
+    cout << "3 - метод коэфицента" << endl;
     short int between;
     cin >> between;
 
@@ -22,6 +24,9 @@ int main()
 
     case 2:
         crammers_rule();
+        break;
+    case 3:
+        viet_rule();
         break;
 
     default:
@@ -36,24 +41,24 @@ int discriminant()
     cin >> a >> b >> c;
     cout << a << "x^2 " << b << "x " << c << "= 0";
     D = pow(b, 2) - 4 * a * c;
-    cout << "D=" << D << endl;
+    cout << "D = " << D << endl;
 
-    if (D < 0)
+    if (D > 0)
     {
-        cout << "Нет действительных корней";
+     x1=-b+sqrt(D)/(2*a);
+     x2=-b-sqrt(D)/(2*a);
+     cout<<"найденны корни \n"<< "x1 = " <<x1<<endl;
+     cout<<"x2 = "<<x2<<endl;
+     else if (x == 0)
+     {
+      x1= -b/(2*a);
+     }
     }
-
-    if (D == 0)
+    
+    else
     {
-        cout<<"d=0";
+     cout<<"нет дейстаительных корней";
     }
-
-    if(D > 0)
-    {
- 
-
-    }
-
 
     return 0;
 }
