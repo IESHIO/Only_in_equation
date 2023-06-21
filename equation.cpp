@@ -3,16 +3,61 @@
 using namespace std;
 // В данном файле будет распологаться решение квадратных уравнений различными методами
 
+int choose();
 int crammers_rule();
 int discriminant();
 
 int main()
 {
     setlocale(LC_ALL, "ru");
-    cout << "Введите метод для решения квадратного уравнения" << endl;
-    cout << "1 - дискриминант"<< "\n" << "2 - Метод Краммера" << endl;
-    cout << "3 - метод коэфицента" << endl;
+    float a11, a12, b1;
+    short int between,choose;
+    cout << "Привет! \nДобро пожаловать в программу для решения уравнений для студентов!" << endl;
+    cout << "Какое у тебя уравнение?" << endl;
+    cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
+    cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log^a x = b)" << endl;
+    cin >> choose;
+
+    switch (choose)
+    {
+    case 1:
+       int choose();
+        break;
+
+    case 2:
+        //реализовать всё в одной функции, но с постоянным выбором
+        break;
+
+    case 3:
+        //что-то отдельное
+        break;
+
+    case 4:
+       //что-то отдельное
+        break;
+
+    case 5:
+         //что-то отдельное
+        break;
+
+    case 6:
+         //что-то отдельное
+        break;
+
+
+    default:
+        cout << "математическая операция не реализована" << endl;
+        return 0;
+    }
+
+}
+
+int choose()
+{ 
     short int between;
+    cout << "каким методом его нужно решить?" << endl;
+    cout << "1 - дискриминант \n2 - Метод Краммера" << endl;
+    cout << "3 - метод коэфицента" << endl;
     cin >> between;
 
     switch (between)
@@ -24,13 +69,15 @@ int main()
     case 2:
         crammers_rule();
         break;
- 
 
     default:
         cout << "математическая операция не реализована" << endl;
         return 0;
     }
+    
+    return 0;
 }
+
 
 int discriminant()
 {
@@ -42,20 +89,21 @@ int discriminant()
 
     if (D > 0)
     {
-     x1=-b+sqrt(D)/(2*a);
-     x2=-b-sqrt(D)/(2*a);
-     cout<<"найденны корни \n"<< "x1 = " <<x1<<endl;
-     cout<<"x2 = "<<x2<<endl;
+        x1 = -b + sqrt(D) / (2 * a);
+        x2 = -b - sqrt(D) / (2 * a);
+        cout << "найденны корни \n"
+             << "x1 = " << x1 << endl;
+        cout << "x2 = " << x2 << endl;
     }
 
-     else if (D == 0)
-     {
-      x1= -b/(2*a);
-     }
-    
+    else if (D == 0)
+    {
+        x1 = -b / (2 * a);
+    }
+
     else
     {
-     cout<<"нет дейстаительных корней";
+        cout << "нет дейстаительных корней";
     }
 
     return 0;
@@ -183,9 +231,9 @@ int main()
     double x,a,result;
     cin >> x;
     cin >> a;
-    cout << x << "x = " << a << endl;  
+    cout << x << "x = " << a << endl;
     result = a / x;
-    cout << "x = " <<result << endl; 
+    cout << "x = " <<result << endl;
 }
 
 /*
