@@ -3,56 +3,59 @@
 using namespace std;
 // В данном файле будет распологаться решение квадратных уравнений различными методами
 
-int choose();
+int methods();
 int crammers_rule();
 int discriminant();
+int fraction();
+int trigonometry();
+int demonstration();
+int logarithmic();
 
 int main()
 {
     setlocale(LC_ALL, "ru");
-    float a11, a12, b1;
     short int between,choose;
     cout << "Привет! \nДобро пожаловать в программу для решения уравнений для студентов!" << endl;
     cout << "Какое у тебя уравнение?" << endl;
     cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
-    cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log^a x = b)" << endl;
+    cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log⌄a x = b)" << endl;
     cin >> choose;
 
     switch (choose)
     {
     case 1:
-       int choose();
+        methods();
         break;
 
     case 2:
-        //реализовать всё в одной функции, но с постоянным выбором
+        methods();//реализовать всё в одной функции, но с постоянным выбором
         break;
 
     case 3:
-        //что-то отдельное
+        fraction();
         break;
 
     case 4:
-       //что-то отдельное
+       trigonometry();
         break;
 
     case 5:
-         //что-то отдельное
+        demonstration();
         break;
 
     case 6:
-         //что-то отдельное
+        logarithmic();
         break;
 
 
     default:
-        cout << "математическая операция не реализована" << endl;
+        cout << "уравнение пока что не реализовано" << endl;
         return 0;
     }
 
 }
 
-int choose()
+int methods()
 { 
     short int between;
     cout << "каким методом его нужно решить?" << endl;
@@ -79,6 +82,7 @@ int choose()
 }
 
 
+
 int discriminant()
 {
     int D, result, a, b, c, x1, x2;
@@ -91,8 +95,7 @@ int discriminant()
     {
         x1 = -b + sqrt(D) / (2 * a);
         x2 = -b - sqrt(D) / (2 * a);
-        cout << "найденны корни \n"
-             << "x1 = " << x1 << endl;
+        cout << "найденны корни \n" << "x1 = " << x1 << endl;
         cout << "x2 = " << x2 << endl;
     }
 
@@ -131,8 +134,7 @@ int crammers_rule()
         cout << "\n";
 
         cout << a11 << " x1 + " << a12 << " x2 = " << b1 << endl;
-        cout << a21 << " x1 + " << a22 << " x2 = " << b2 << "\n"
-             << endl;
+        cout << a21 << " x1 + " << a22 << " x2 = " << b2 << "\n" << endl;
 
         cout << "Матрица определителя:" << endl;
         cout << a11 << " " << a12 << endl;
@@ -210,34 +212,35 @@ int crammers_rule()
     return 0;
 }
 
-/*
-Задачи:
-1-Написать код для интерфейса матриц:
-
-*22     676*        !22     676!
-*          *        !          !
-*16     231*        !16     231!
-
-ну или что-то в таком стиле.
-2-Добавить решение через дискреминант.
-3-написать выбор разных методов. (выполнено*)
-#include <iostream>
-using namespace std;
-// В данном файле будет распологаться решение обычных уравнений различными методами
-int main()
+int fraction()
 {
-    setlocale(LC_ALL,"ru");
-    cout<<"Введите уравнения:";
-    double x,a,result;
-    cin >> x;
-    cin >> a;
-    cout << x << "x = " << a << endl;
-    result = a / x;
-    cout << "x = " <<result << endl;
+    cout<<"Введите своё биквадратное уравнение:" << endl;
+    return 0;
 }
 
+int trigonometry()
+{
+    cout<<"Введите своё тригонометрическое уравнение:" << endl;
+    return 0;
+}
+
+int demonstration()
+{
+    cout<<"Введите своё показательное уравнение:" << endl;
+    return 0;
+}
+
+int logarithmic()
+{
+    cout<<"Введите своё логарифмическое уравнение:" << endl;
+    return 0;
+}
+
+
+
+
 /*
 Задачи:
-1-написать код для выбора режимов (можно взять как у файла "quadratic_equation").
-2-написать код для любого метода решений уравнений.
+
 */
+
