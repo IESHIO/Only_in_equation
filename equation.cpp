@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-// В данном файле будет распологаться решение квадратных уравнений различными методами
+// В данном файле будет распологаться решение уравнений различными методами
 
-int methods();
+int line();
+int quadratic();
 int crammers_rule();
 int discriminant();
-int fraction();
+int fractional();
 int trigonometry();
 int demonstration();
 int logarithmic();
@@ -14,29 +15,29 @@ int logarithmic();
 int main()
 {
     setlocale(LC_ALL, "ru");
-    short int between,choose;
+    unsigned short int ChooseEquation;
     cout << "Привет! \nДобро пожаловать в программу для решения уравнений для студентов!" << endl;
     cout << "Какое у тебя уравнение?" << endl;
     cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
     cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log⌄a x = b)" << endl;
-    cin >> choose;
+    cin >> ChooseEquation;
 
-    switch (choose)
+    switch (ChooseEquation)
     {
     case 1:
-        methods();
+        line();
         break;
 
     case 2:
-        methods();//реализовать всё в одной функции, но с постоянным выбором
+        quadratic();
         break;
 
     case 3:
-        fraction();
+        fractional();
         break;
 
     case 4:
-       trigonometry();
+        trigonometry();
         break;
 
     case 5:
@@ -47,24 +48,54 @@ int main()
         logarithmic();
         break;
 
-
     default:
         cout << "уравнение пока что не реализовано" << endl;
         return 0;
     }
-
 }
 
-int methods()
-{ 
-    //реализовать выбор на уровне ввода уравнения
-    short int between;
-    cout << "каким методом его нужно решить?" << endl;
-    cout << "1 - дискриминант \n2 - Метод Краммера" << endl;
-    cout << "3 - метод коэфицента" << endl;
-    cin >> between;
+int line()
+{
+    unsigned short int SelectMethod;
+    char QuestionSystem;
+    cout << "Необходимо решение системы линейных уравнения?" << endl;
+    cout << "y/n: ";
+    cin >> QuestionSystem;
+    if (QuestionSystem == 'y')
+    {
+        cout << "Ты это реально запраграммируешь?";
+    }
 
-    switch (between)
+    else
+    {
+        cout << "Каким методом его нужно решить? (1/0)" << endl;
+        cin >> SelectMethod;
+        switch (SelectMethod)
+        {
+        case 1:
+            logarithmic();
+            break;
+
+        case 2:
+            demonstration();
+            break;
+
+        default:
+            cout << "математическая операция не реализована" << endl;
+            return 0;
+        }
+    }
+
+    return 0;
+}
+
+int quadratic()
+{
+    unsigned short int SelectMethod;
+    cout << "каким методом его нужно решить?" << endl;
+    cout << "1 - дискриминант \n2 - Метод Краммера \n3 - метод коэфицента" << endl;
+    cin >> SelectMethod;
+    switch (SelectMethod)
     {
     case 1:
         discriminant();
@@ -74,19 +105,20 @@ int methods()
         crammers_rule();
         break;
 
+    case 3:
+
+        break;
+
     default:
         cout << "математическая операция не реализована" << endl;
         return 0;
     }
-    
     return 0;
 }
 
-
-
 int discriminant()
 {
-    int D, result, a, b, c, x1, x2;
+    float D, result, a, b, c, x1, x2;
     cin >> a >> b >> c;
     cout << a << "x^2 " << b << "x " << c << "= 0";
     D = pow(b, 2) - 4 * a * c;
@@ -96,7 +128,7 @@ int discriminant()
     {
         x1 = -b + sqrt(D) / (2 * a);
         x2 = -b - sqrt(D) / (2 * a);
-        cout << "найденны корни \n" << "x1 = " << x1 << endl;
+        cout << "найденны корни \nx1 = " << x1 << endl;
         cout << "x2 = " << x2 << endl;
     }
 
@@ -107,7 +139,7 @@ int discriminant()
 
     else
     {
-        cout << "нет дейстаительных корней";
+        cout << "нет действительных корней";
     }
 
     return 0;
@@ -120,10 +152,10 @@ int crammers_rule()
      * 112 байт      56 байт
      * 896 бит       448 бит
      */
-    short int choose;
+    unsigned short int QuantityEquation;
     cout << "Выберите количество уравнений в методе Краммера:";
-    cin >> choose;
-    switch (choose)
+    cin >> QuantityEquation;
+    switch (QuantityEquation)
     {
     case 2:
         cout << "Введите два уравнение:" << endl;
@@ -135,7 +167,7 @@ int crammers_rule()
         cout << "\n";
 
         cout << a11 << " x1 + " << a12 << " x2 = " << b1 << endl;
-        cout << a21 << " x1 + " << a22 << " x2 = " << b2 << "\n" << endl;
+        cout << a21 << " x1 + " << a22 << " x2 = " << b2 << endl;
 
         cout << "Матрица определителя:" << endl;
         cout << a11 << " " << a12 << endl;
@@ -170,10 +202,10 @@ int crammers_rule()
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
     case 3:
         cout << "Введите три уравнение" << endl;
-        cout << " Введите коэффиценты: ";
+        cout << "Введите коэффиценты: ";
         cin >> a11 >> a12 >> a13;
         cin >> a21 >> a22 >> a23;
-        cout << " после =: ";
+        cout << "после =: ";
         cin >> b1 >> b2 >> b3;
         cout << "\n";
 
@@ -181,28 +213,28 @@ int crammers_rule()
         cout << a21 << "x1 + " << a22 << "x2 = " << b2 << endl;
         cout << a11 << "x1 + " << a12 << "x2 = " << b3 << endl;
 
-        cout << "Матрица определителя " << endl;
+        cout << "\nМатрица определителя " << endl;
         cout << a11 << " " << a12 << endl;
         cout << a21 << " " << a22 << endl;
         determinant = (a11 * a22) - (a12 * a21);
 
-        cout << "Определитель = " << determinant << endl;
+        cout << "\nОпределитель = " << determinant << endl;
 
-        cout << "Матрица для вычисления определителя x: " << endl;
+        cout << "\nМатрица для вычисления определителя x: " << endl;
         cout << b1 << " " << a12 << endl;
         cout << b2 << " " << a22 << endl;
         result_x = (b1 * a22) - (a12 * b2);
 
-        cout << "Определитель х = " << result_x << endl;
+        cout << "\nОпределитель х = " << result_x << endl;
 
-        cout << "Матрица для вычисления определителя y: " << endl;
+        cout << "\nМатрица для вычисления определителя y: " << endl;
         cout << a11 << " " << b1 << endl;
         cout << a21 << " " << b2 << endl;
         result_y = (a11 * b2) - (b1 * a21);
 
-        cout << "Определитель y = " << result_y << endl;
+        cout << "\nОпределитель y = " << result_y << endl;
         x = result_x / determinant;
-        cout << "x = " << x << endl;
+        cout << "\nx = " << x << endl;
         y = result_y / determinant;
         cout << "y = " << y << endl;
         break;
@@ -213,35 +245,31 @@ int crammers_rule()
     return 0;
 }
 
-int fraction()
+int fractional()
 {
-    cout<<"Введите своё биквадратное уравнение:" << endl;
+    cout << "Введите своё биквадратное уравнение:" << endl;
     return 0;
 }
 
 int trigonometry()
 {
-    cout<<"Введите своё тригонометрическое уравнение:" << endl;
+    cout << "Введите своё тригонометрическое уравнение:" << endl;
     return 0;
 }
 
 int demonstration()
 {
-    cout<<"Введите своё показательное уравнение:" << endl;
+    cout << "Введите своё показательное уравнение:" << endl;
     return 0;
 }
 
 int logarithmic()
 {
-    cout<<"Введите своё логарифмическое уравнение:" << endl;
+    cout << "Введите своё логарифмическое уравнение:" << endl;
     return 0;
 }
-
-
-
 
 /*
 Задачи:
 
 */
-
