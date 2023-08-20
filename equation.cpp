@@ -17,7 +17,7 @@ int main()
     setlocale(LC_ALL, "ru");
     unsigned short int ChooseEquation;
     cout << "Привет! \nДобро пожаловать в программу для решения уравнений для студентов!" << endl;
-    cout << "Какое у тебя уравнение?" << endl;
+    cout << "Какой у тебя вид уравнение?" << endl;
     cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
     cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log⌄a x = b)" << endl;
     cin >> ChooseEquation;
@@ -68,16 +68,16 @@ int line()
 
     else
     {
-        cout << "Каким методом его нужно решить? (1/0)" << endl;
+        cout << "Каким методом его нужно решить?" << endl;
         cin >> SelectMethod;
         switch (SelectMethod)
         {
         case 1:
-            logarithmic();
+        
             break;
 
         case 2:
-            demonstration();
+        
             break;
 
         default:
@@ -118,9 +118,19 @@ int quadratic()
 
 int discriminant()
 {
-    float D, result, a, b, c, x1, x2;
+    float  a, b, c, D, x1, x2;
+    cout << "Введите своё уравнение:";
     cin >> a >> b >> c;
-    cout << a << "x^2 " << b << "x " << c << "= 0";
+    if(a>0 && c>0)
+    {
+        cout << a << "x^2 + " << b << "x + " << c << "= 0" << endl;
+    }
+
+    else
+    {
+        cout << a << "x^2 - " << b << "x " << c << "= 0" << endl;
+    }
+
     D = pow(b, 2) - 4 * a * c;
     cout << "D = " << D << endl;
 
@@ -128,7 +138,7 @@ int discriminant()
     {
         x1 = -b + sqrt(D) / (2 * a);
         x2 = -b - sqrt(D) / (2 * a);
-        cout << "найденны корни \nx1 = " << x1 << endl;
+        cout << "найденны корни: \nx1 = " << x1 << endl;
         cout << "x2 = " << x2 << endl;
     }
 
@@ -248,6 +258,7 @@ int crammers_rule()
 int fractional()
 {
     cout << "Введите своё биквадратное уравнение:" << endl;
+    
     return 0;
 }
 
