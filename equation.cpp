@@ -128,7 +128,7 @@ int discriminant()
 
     else
     {
-        cout << a << "x^2 - " << b << "x " << c << "= 0" << endl;
+        cout << a << "x^2 " << b << "x " << c << "= 0" << endl;
     }
 
     D = pow(b, 2) - 4 * a * c;
@@ -149,7 +149,9 @@ int discriminant()
 
     else
     {
-        cout << "нет действительных корней";
+        cout << "нет действительных корней, но можно найти комплексные корни." << endl;
+        cout << D << " или " << abs(D) << "i" ;
+        
     }
 
     return 0;
