@@ -3,9 +3,9 @@
 using namespace std;
 // В данном файле будет распологаться решение уравнений различными методами
 
-int line();
+int line();                                                         //объявление всех функций
 int quadratic();
-int crammers_rule();
+int crammers_rule();                        
 int discriminant();
 int fractional();
 int trigonometry();
@@ -20,7 +20,7 @@ int main()
     cout << "Какой у тебя вид уравнение?" << endl;
     cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
     cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log⌄a x = b)" << endl;
-    cin >> ChooseEquation;
+    cin >> ChooseEquation;                                             //ввод значения для выбора решения вида уравнения
 
     switch (ChooseEquation)
     {
@@ -243,7 +243,7 @@ int crammers_rule()
         cout << a11 << " " << b1 << endl;
         cout << a21 << " " << b2 << endl;
         result_y = (a11 * b2) - (b1 * a21);
-
+        
         cout << "\nОпределитель y = " << result_y << endl;
         x = result_x / determinant;
         cout << "\nx = " << x << endl;
@@ -260,7 +260,6 @@ int crammers_rule()
 int fractional()
 {
     cout << "Введите своё биквадратное уравнение:" << endl;
-    
     return 0;
 }
 
