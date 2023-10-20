@@ -2,7 +2,6 @@
 #include <cmath>
 using namespace std;
 // В данном файле будет распологаться решение уравнений различными методами
-
 int line();                                                         //объявление всех функций
 int quadratic();
 int crammers_rule();                        
@@ -11,7 +10,7 @@ int fractional();
 int trigonometry();
 int demonstration();
 int logarithmic();
-
+int matrix();
 int main()
 {
     setlocale(LC_ALL, "ru");
@@ -20,32 +19,36 @@ int main()
     cout << "Какой у тебя вид уравнение?" << endl;
     cout << "1 - линейное (ax+b=0) \n2 - квадратное (ax^2+bx+c=0)\n3 - биквадратное (f(x)/g(x)=0) \n";
     cout << "4 - тригонометрическое (sin x = a) \n5 - показательное (a^x = b)\n6 - логарифмическое (log⌄a x = b)" << endl;
+    cout << "7 - матрицы \n" << endl;
     cin >> ChooseEquation;                                             //ввод значения для выбора решения вида уравнения
-
     switch (ChooseEquation)
     {
     case 1:
-        line();
+        line();                                                        //переход к линейным уравнениям
         break;
 
     case 2:
-        quadratic();
+        quadratic();                                                   //переход к квадратным уравнениям
         break;
 
     case 3:
-        fractional();
+        fractional();                                                  //переход к биквадратным уравнениям
         break;
 
     case 4:
-        trigonometry();
+        trigonometry();                                                //переход к тригонометрическим уравнениям
         break;
 
     case 5:
-        demonstration();
+        demonstration();                                               //переход к показательным уравнениям
         break;
 
     case 6:
-        logarithmic();
+        logarithmic();                                                 //переход к логарифмическим уравнениям
+        break;
+
+    case 7:
+        matrix();                                                      //переход к решениюю матриц
         break;
 
     default:
@@ -53,22 +56,22 @@ int main()
         return 0;
     }
 }
-
 int line()
 {
     unsigned short int SelectMethod;
-    char QuestionSystem;
-    cout << "Необходимо решение системы линейных уравнения?" << endl;
+    char QuestionSystem;                                                            
+    cout << "Необходимо решение системы линейных уравнения?" << endl;           
     cout << "y/n: ";
     cin >> QuestionSystem;
-    if (QuestionSystem == 'y')
+    if (QuestionSystem == 'y')                                    // Если пользователь выберет 'y', то необходимо реализовать либо функцию решению систем линейных уравнений либо через switch и выбор case'ов выбирать методы решения
     {
-        cout << "Ты это реально запраграммируешь?";
+        cout << "Ты это реально запрограммируешь?";               //да. 
     }
 
-    else
+    else                                                          // Если пользователь выберет 'n', то реализация пойдёт по switch и необходимо написать название и индексы методов
     {
         cout << "Каким методом его нужно решить?" << endl;
+      //cout <<"1 - метод первый /n2-метод второй"<<endl;
         cin >> SelectMethod;
         switch (SelectMethod)
         {
@@ -85,10 +88,8 @@ int line()
             return 0;
         }
     }
-
     return 0;
 }
-
 int quadratic()
 {
     unsigned short int SelectMethod;
@@ -115,25 +116,23 @@ int quadratic()
     }
     return 0;
 }
-
 int discriminant()
 {
     float  a, b, c, D, x1, x2;
     cout << "Введите своё уравнение:";
     cin >> a >> b >> c;
-    if(a>0 && c>0)
+    if(a>0 && c>0)                      //если пользователь введёт коэффиценты больше нуля то ему выведутся положительные знаки
     {
         cout << a << "x^2 + " << b << "x + " << c << "= 0" << endl;
     }
 
-    else
+    else                                //если пользователь введёт коэффиценты меньше нуля то ему выведутся отрицательные знаки
     {
         cout << a << "x^2 " << b << "x " << c << "= 0" << endl;
     }
 
     D = pow(b, 2) - 4 * a * c;
     cout << "D = " << D << endl;
-
     if (D > 0)
     {
         x1 = -b + sqrt(D) / (2 * a);
@@ -148,18 +147,16 @@ int discriminant()
     }
 
     else
-    {
-        cout << "нет действительных корней, но можно найти комплексные корни." << endl;
+    {   
+        cout << "нет действительных корней, но можно найти комплексные корни." << endl;                     //реализовать выбор пользователю, считать ли комплексные числа      
         cout << D << " или " << abs(D) << "i" ;
         
     }
-
     return 0;
 }
-
 int crammers_rule()
 {
-    float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y, x, y; // Поработать над типами данных переменных (с памятью)
+    float a11, a12, a13, a21, a22, a23, b1, b2, b3, determinant, result_x, result_y, x, y;                  // Поработать над типами данных переменных (с памятью)
     /* double:      float:
      * 112 байт      56 байт
      * 896 бит       448 бит
@@ -256,29 +253,32 @@ int crammers_rule()
     }
     return 0;
 }
-
 int fractional()
 {
     cout << "Введите своё биквадратное уравнение:" << endl;
     return 0;
 }
-
 int trigonometry()
 {
     cout << "Введите своё тригонометрическое уравнение:" << endl;
     return 0;
 }
-
 int demonstration()
 {
     cout << "Введите своё показательное уравнение:" << endl;
     return 0;
 }
-
 int logarithmic()
 {
     cout << "Введите своё логарифмическое уравнение:" << endl;
     return 0;
+}
+
+int matrix()
+{
+    unsigned short int ChooseMatrix;
+    cout<<"Какой вид матрицы?"<<"\n2x2 или 3x3?";
+    cin >> ChooseMatrix;
 }
 
 /*
