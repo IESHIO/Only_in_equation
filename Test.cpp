@@ -2,29 +2,30 @@
 using namespace std;
 int main()
 {
-    const unsigned int ROWS=3;
-    const unsigned int COLS=3;
-    int array [ROWS][COLS];
-    
-    for(int i=0;i<ROWS;i++)
+  //Временно создаём статический массив. После изучения динамических двумерных массивов необхожимо заменить из-за того, чтоб формировать многомерные матрицы
+  const unsigned int ROWS=3;
+  const unsigned int COLS=3;
+  int array [ROWS][COLS];
+  //инициализируем массив через ввод данных в массив (всего получается 9 элементов)
+  for(int i=0;i<ROWS;i++)
+  {
+    for(int j=0;j<COLS;j++)
     {
-        for(int j=0;j<COLS;j++)
-        {
-          cin>>array[i][j]; 
-        }
+      cin>>array[i][j]; 
     }
+  }
     
-    cout << "Введённая матрица:" << endl;
-    
-    for(int i=0;i<ROWS;i++)
+  cout << "Введённая матрица:" << endl;
+  //выводим массив  
+  for(int i=0;i<ROWS;i++)
+  {
+    for(int j=0;j<COLS;j++)
     {
-        for(int j=0;j<COLS;j++)
-        {
-          cout<<array[i][j]<< "\t"; 
-        }
-        cout<<endl;
+      cout<<array[i][j]<< "\t"; 
     }
-    
-
-return 0;
+      cout<<endl;
+  }
+  //Возможно, зададим вопрос пользователю, что ему необходимо найти, но пока что он просто прорешивает одиночные матрицы (скорее всего квадратные) 
+  
+  return 0;
 }    
