@@ -50,7 +50,7 @@ int main()
       determinant = matrix_A[0][0] * ((matrix_A[1][1] * matrix_A[2][2])- (matrix_A[1][2] * matrix_A[2][1])) -  matrix_A[0][1] * ((matrix_A[1][0] * matrix_A[2][2])- (matrix_A[1][2] * matrix_A[2][0])) +  matrix_A[0][2] * ((matrix_A[1][0] * matrix_A[2][1])- (matrix_A[1][1] * matrix_A[2][0]));
       cout << "По Разложения определителя по первой строке определитель = " << determinant << endl;
     }
-
+/*
     else
     {
       determinant = (matrix_A[0][0] * matrix_A[1][1] * matrix_A[2][2]) + (matrix_A[0][1] * matrix_A[1][2] * matrix_A[2][0]) + (matrix_A[0][2] * matrix_A[1][0] * matrix_A[2][1]) - (matrix_A[0][0] * matrix_A[1][2] * matrix_A[2][1]) - (matrix_A[0][1] * matrix_A[1][0] * matrix_A[2][2]) - (matrix_A[0][2] * matrix_A[1][1] * matrix_A[2][0]);
@@ -128,8 +128,8 @@ int main()
     /*determinant = (a11*a22*a33)+(a12*a23*a31)+(a13*a21*a32)-(a11*a23*a32)-(a12*a21*a33)-(a13*a22*a31);
     cout<<"По правилу треугольника определитель =" <<determinant<<endl;
     determinant = (a11*a22*a33)+(a12*a23*a31)+(a13*a21*a32)-(a13*a22*a31)-(a11*a23*a32)-(a12*a21*a33);
-    cout<<"По правилу Саррюса определитель =" <<determinant<<endl */
-    break;
+    cout<<"По правилу Саррюса определитель =" <<determinant<<endl */ 
+  break;
   default:
     cout << "Тебе здесь не рады." << endl;
     break;
